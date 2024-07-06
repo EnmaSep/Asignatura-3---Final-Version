@@ -1,0 +1,87 @@
+<!--
+Crear una página HTML con un formulario con 3 campos:
+
+Uno para ingresar su nombre 
+Otro para ingresar su edad
+Y otro para seleccionar su color favorito. 
+
+
+Añadir al formulario 3 botones. Cada botón tendrá una funcionalidad:
+
+Cuando el usuario haga clic en un botón, se mostrará un título (usando h1) con un mensaje de bienvenida personalizado con el nombre del usuario y el color favorito seleccionado se aplicará al fondo (background) de ese título. 
+Cuando el usuario haga clic en el segundo botón, mostrar una lista en el documento con los números desde el 1 hasta la edad del usuario.
+Cuando el usuario en el tercer botón, mostrar en un título (usando h1) con las siguientes condiciones:
+Si la edad es entre 1 y 12: Niño
+Si la edad es entre 13 y 19: Adolescente
+Si la edad es entre 20 y 60: Adulto 
+Si la edad es entre 61 y 100: Tercera edad
+Nota: En esta práctica no se usará prompt(), ni alert(), ni console.log(), deben usarse formularios para entrada de datos y los mensajes deben ser con etiquetas HTML
+
+Todo el comportamiento de la página será manejado por funciones en TypeScript.
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"> <!--Stylesheet(CSS) Linking-->
+  <title>Asignacion 3</title>
+</head>
+
+<body>
+  
+
+  <form> <!--Info Fields-->
+    <div>
+      <label class="fields" for="name">Nombre</label>
+      <input type="text" id="name" placeholder="Inserte Nombre">
+    </div>
+
+    <br>
+
+    <div>  
+      <label class="fields" for="age">Edad</label>
+      <input type="number" id="age" placeholder="Inserte Edad">
+    </div>  
+    
+    <br>
+
+    <div>
+      <label for="favColor">Color favorito</label> <!--Color Selector-->
+      <select id="favColor" class="fields">
+        <option style="background-color:#0000ff" value="#0000ff"> Azul</option>
+        <option style="background-color:#008000" value="#008000">Verde</option> 
+        <option style="background-color:#ff0000" value="#ff0000">Rojo</option>
+        <option style="background-color:#ffff00" value="#ffff00">Amarillo</option>
+        <option style="background-color:#ffc0cb" value="#ffc0cb">Rosa</option>
+        <option style="background-color:#ffa500" value="#ffa500">Naranja</option>
+        <option style="background-color:#9900b8" value="#9900b8">Moradito</option>
+      </select> 
+    </div>
+  </form>
+
+  <br> <!--Buttooooons-->
+
+    <button class="buttons" onclick="displayName()">Boton 1</button>
+    <button class="buttons" onclick="ageCount()">Boton 2</button>
+    <button class="buttons" onclick="ageJudge()">Boton 3</button>
+
+  <br> <!--Actual info being shown on the document-->
+
+  <div class="infos">
+    <h1 id="greetings" class="welcome"></h1>
+    <p id="ageList"></p>
+    <h1 id="minorAdult"></h1>
+  </div>
+  
+  <!--JS Linking-->
+  <script src="script.js"></script> 
+
+
+</body>
+
+</html>
